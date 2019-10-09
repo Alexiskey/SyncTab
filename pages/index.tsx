@@ -5,7 +5,7 @@ import { Label, List } from "semantic-ui-react";
 
 import { AuthContext } from "../src/client/components/Auth/Context";
 import { User } from "../src/interfaces";
-
+import { Button } from 'semantic-ui-react'
 const UsersList: FC = () => {
   const [{ data, loading, error }] = useAxios<User[]>("/api/users");
 
@@ -42,7 +42,7 @@ const Index: NextPage = () => {
   if (user) {
     return <UsersList />;
   }
-  return <Label>You need to be authenticated!</Label>;
+  return <Label><Button>Click Here</Button>You need to be authenticated!</Label>;
 };
 
 export default Index;
